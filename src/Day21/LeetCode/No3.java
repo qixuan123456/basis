@@ -1,8 +1,6 @@
 package Day21.LeetCode;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class No3 {
@@ -14,6 +12,9 @@ public class No3 {
     }
 }
 class Solution3 {
+    public Solution3(){
+
+    }
     public int lengthOfLongestSubstring(String s) {
         int max = 0;
         int num = 0;
