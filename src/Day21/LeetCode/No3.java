@@ -1,43 +1,38 @@
 package Day21.LeetCode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class No3 {
     public static void main(String[] args) {
         Solution3 str=new Solution3();
-        String s="abcabcbb";
+        String s="jbpnbwwd";
        int i = str.lengthOfLongestSubstring(s);
         System.out.println(i);
     }
 }
 class Solution3 {
     public int lengthOfLongestSubstring(String s) {
-        int max=0;
-        int length=0;
-        int flag=0;
-        Map<Character,Integer> map = new HashMap<>();
+        int max = 0;
+        int num = 0;
+        int count = 0;
+        Set<Character> set = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
-
-            if(!map.containsKey(s.charAt(i))){
-                map.put(s.charAt(i),i);
-                length=i-flag+1;
+            if(set.add(s.charAt(i))){
+                num++;
             }
             else{
-                int a=map.get(s.charAt(i));
-                if(flag>a)
-                    length=i-flag;
-                else{
-                    length=i-a;
-                    map.put(s.charAt(i),i);
-
+                while(!set.add(s.charAt(i))){
+                    set.remove(s.charAt(count));
+                    count++;
                 }
-                flag=a+1;
-
+                num = set.size();
             }
-
-            if(length>max)
-                max=length;
+            if(num>max){
+                max = num;
+            }
         }
         return max;
     }
