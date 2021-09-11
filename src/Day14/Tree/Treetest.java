@@ -34,13 +34,21 @@ public class Treetest<T> {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             TreeNode<?> treeNode = (TreeNode<?>) o;
 
-            if (data != null ? !data.equals(treeNode.data) : treeNode.data != null) return false;
-            if (lchild != null ? !lchild.equals(treeNode.lchild) : treeNode.lchild != null) return false;
+            if (data != null ? !data.equals(treeNode.data) : treeNode.data != null) {
+                return false;
+            }
+            if (lchild != null ? !lchild.equals(treeNode.lchild) : treeNode.lchild != null) {
+                return false;
+            }
             return rchild != null ? rchild.equals(treeNode.rchild) : treeNode.rchild == null;
         }
 

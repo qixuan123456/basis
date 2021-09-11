@@ -6,60 +6,57 @@ import javax.sound.sampled.Clip;
 import java.io.File;
 import java.util.Date;
 
-public class Alarm extends Thread{
+/**
+ * @author xuan
+ */
+public class Alarm extends Thread {
 
     String S = "11:50";
     double s;
     double m;
     double h;
     String musicLocation = "src\\Day06\\fenkai.wav";
-    public Alarm()
-    {
+
+    public Alarm() {
 
     }
+
     @Override
-    public void run()
-    {
-        while(true) {
+    public void run() {
+        while (true) {
             Date date = new Date();
             s = date.getSeconds();
             m = date.getMinutes();
             h = date.getHours();
-            if(h!=9&&m!=8&&s!=0) {//8&&m!=52&&s!=0
+            if (h != 9 && m != 8 && s != 0) {
                 try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            } else {
+                break;
             }
-            else
-            break;
         }
         playMusic(musicLocation);
         System.out.println("已播放");
 
     }
-    void playMusic(String musicLocation)
-    {
-        try
-        {
+
+    void playMusic(String musicLocation) {
+        try {
             File musicPath = new File(musicLocation);
 
-            if(musicPath.exists())
-            {
+            if (musicPath.exists()) {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
                 clip.start();
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
-            }
-            else
-            {
+            } else {
 
             }
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

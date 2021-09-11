@@ -53,8 +53,9 @@ public class BinarySearchTree {
             } else {
                 current = current.left;
             }
-            if (current == null)
+            if (current == null) {
                 return null;
+            }
         }
         return current;
     }
@@ -102,7 +103,9 @@ public class BinarySearchTree {
                 current = current.left;
                 isRightChild = false;
             }
-            if (current == null) return false; // 没有找到要删除的结点
+            if (current == null) {
+                return false; // 没有找到要删除的结点
+            }
         }
         // 此时current就是要删除的结点,parent为其父结点
         // 要删除结点为叶子结点
@@ -110,41 +113,45 @@ public class BinarySearchTree {
             if (current == root) {
                 root = null; // 整棵树清空
             } else {
-                if (isRightChild)
+                if (isRightChild) {
                     parent.right = null;
-                else
+                } else {
                     parent.left = null;
+                }
             }
             return true;
         }
         //要删除结点有一个子结点
         else if (current.left == null) {
-            if (current == root)
+            if (current == root) {
                 root = current.right;
-            else if (isRightChild)
+            } else if (isRightChild) {
                 parent.right = current.right;
-            else
+            } else {
                 parent.left = current.right;
+            }
             return true;
         } else if (current.right == null) {
-            if (current == root)
+            if (current == root) {
                 root = current.left;
-            else if (isRightChild)
+            } else if (isRightChild) {
                 parent.right = current.left;
-            else
+            } else {
                 parent.left = current.left;
+            }
             return true;
         }
         //要删除结点有两个子结点
         else {
             Node successor = getSuccessor(current);    //找到要删除结点的后继结点
 
-            if (current == root)
+            if (current == root) {
                 root = successor;
-            else if (isRightChild)
+            } else if (isRightChild) {
                 parent.right = successor;
-            else
+            } else {
                 parent.left = successor;
+            }
 
             successor.left = current.left;
             return true;

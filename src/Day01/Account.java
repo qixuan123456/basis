@@ -9,9 +9,9 @@ public class Account {
 
     public void Qu(int b)
     {
-        if(zhanghu.Balance<b)
+        if(zhanghu.Balance<b) {
             System.out.println("余额不足");
-        else{
+        } else{
             zhanghu.Balance-=b;
             System.out.println("成功取出"+b+"元");
             System.out.println("余额为"+zhanghu.Balance+"元");

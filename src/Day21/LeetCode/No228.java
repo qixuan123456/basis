@@ -4,8 +4,8 @@ public class No228 {
 
 
     public static void main(String[] args) {
-        int a[] = {1, 3, 4,6};
-        int b[] = {0,0};
+        int[] a = {1, 3, 4,6};
+        int[] b = {0,0};
         int l=a.length;
         b[0]=a[0];
         b[1]=a[0];

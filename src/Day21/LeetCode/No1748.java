@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class No1748 {
     public static void main(String[] args) {
-        int arg[]= {1,2,3,4,4};
+        int[] arg = {1,2,3,4,4};
        
 
         Map<Integer,Integer> a = new HashMap<>();
@@ -15,8 +15,9 @@ public class No1748 {
             if(a.getOrDefault(arg[i],0)==0){
                 a.put(arg[i],1);
             }
-            else
+            else {
                 a.put(arg[i],a.getOrDefault(arg[i],0)+1);
+            }
         }
         for (Integer i :
                 a.keySet()) {

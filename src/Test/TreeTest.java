@@ -64,8 +64,9 @@ public class TreeTest {
 
     //二叉树路径和
     public boolean hasPathSum(TreeNode root, int targetSum) {
-        if(root==null)
+        if(root==null) {
             return false;
+        }
         return isSome(root,targetSum,0);
     }
     public boolean isSome(TreeNode root,int targetSum,int sum){

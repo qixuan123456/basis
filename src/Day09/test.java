@@ -14,10 +14,11 @@ public byte[] id = {1,0};
 
     public byte nextBit(String startPattern) {
 
-        if (this.toBinaryString().startsWith(startPattern + "1"))
+        if (this.toBinaryString().startsWith(startPattern + "1")) {
             return 1;
-        else
+        } else {
             return 0;
+        }
     }
     public String toBinaryString() {
 

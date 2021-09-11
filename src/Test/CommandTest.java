@@ -11,8 +11,9 @@ public class CommandTest {
         String[] ss = {"1","2","3"};
         List<String> argsList = new ArrayList<>();
         for (String arg : ss) {
-            if ("1".compareTo(arg)!=0)
+            if ("1".compareTo(arg)!=0) {
                 argsList.add(arg);
+            }
         }
         String[] newArgs = argsList.toArray(new String[0]);
         System.out.println();

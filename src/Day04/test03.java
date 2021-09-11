@@ -29,12 +29,14 @@ public class test03 {
             }
             else
             {
-                if(flag)
+                if(flag) {
                     a++;
+                }
             }
 
-            if(max<a)
+            if(max<a) {
                 max=a;
+            }
             n = n>>1;
         }
         System.out.println(max);

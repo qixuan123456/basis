@@ -12,8 +12,9 @@ public class HexStringToInt {
     }
     public static long HexStringToInt(String s){
         long b=0;
-        if(s==null||s.length()<3)
+        if(s==null||s.length()<3) {
             return b;
+        }
         long a = 0L;
         for (int i =2;i<s.length();i++){
 

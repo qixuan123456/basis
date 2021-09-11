@@ -18,13 +18,15 @@ public class Test01 {
         List<Integer> d = new ArrayList<>();
         b.add(1);
         a.add(b);
-        if(numRows==1)
+        if(numRows==1) {
             return a;
+        }
         d.add(1);
         d.add(1);
         a.add(d);
-        if(numRows==2)
+        if(numRows==2) {
             return a;
+        }
         List<Integer> e = d;
         for(int i = 2;i<numRows;i++)
         {
