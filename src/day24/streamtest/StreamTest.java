@@ -21,9 +21,11 @@ public class StreamTest {
                 new Student(5, "不知火舞", 21, 90d),
                 new Student(5, "不知火舞", 21, 90d)
         );
+        //过滤
         System.out.println("-------------------------filter------------------------");
         list.stream().filter(a->a.getAge()<20).forEach(System.out::println);
 
+        //去重
         System.out.println("-------------------------distinct------------------------");
         list.stream().skip(3).distinct().forEach(System.out::println);
 
@@ -41,9 +43,9 @@ public class StreamTest {
 
         System.out.println("-------------------------collect------------------------");
         String collect = list.stream().map(Student::getName).distinct().collect(Collectors.joining(","));
+        System.out.println(collect);
 
         System.out.println("-------------------------comparator------------------------");
-        System.out.println(collect);
         list.stream()
                 .sorted(Comparator.comparingDouble(Student::getScore).reversed()
                         .thenComparing(Student::getAge)
