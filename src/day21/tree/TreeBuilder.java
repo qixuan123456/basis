@@ -13,6 +13,14 @@ public class TreeBuilder {
     public TreeBuilder(){
 
     }
+    public static TreeBuilder create(){
+        return new TreeBuilder();
+    }
+    /**
+     * 水平创建二叉树
+     * @param array 每个树节点的值
+     * @return 根结点
+     */
     public TreeNode createTree(int[] array){
         List<TreeNode> nodeList = new LinkedList<TreeNode>();
         for (int j : array) nodeList.add(new TreeNode(j));
@@ -30,6 +38,13 @@ public class TreeBuilder {
         return nodeList.get(0)==null?null:nodeList.get(0);
     }
 
+    /**
+     * 创建二叉树
+     * @param arr1 数组1
+     * @param arr2 数组2
+     * @param mode 1:根据前序与中序创建二叉树  2:根据中序和后序创建二叉树
+     * @return 根节点
+     */
     public TreeNode createTree(int[] arr1,int[] arr2,int mode){
         if(mode == 1){
             return createTreeByPreMid(arr1,arr2);
@@ -41,9 +56,16 @@ public class TreeBuilder {
         }
     }
 
+    /**
+     * 根据前序与中序创建二叉树
+     * @param pre 前序数组
+     * @param in  中序数组
+     * @return  根节点
+     */
     private TreeNode createTreeByPreMid(int[] pre ,int[] in){
         return createTreeByPreMid(pre,0,pre.length-1,in,0,in.length-1);
     }
+
     private TreeNode createTreeByPreMid(int[] pre,int preStart,int preEnd,int[] in,int inStart,int inEnd){
         if(preStart>preEnd || inStart > inEnd){ //到达边界条件时返回null
             return null;
@@ -61,7 +83,12 @@ public class TreeBuilder {
         return treeNode;
     }
 
-
+    /**
+     * 根据中序与后序创建二叉树
+     * @param in   中序数组
+     * @param last 后序数组
+     * @return 根节点
+     */
     private TreeNode createTreeByMidPost(int[] in,int[] last){
         return createTreeByMidPost(in,0,in.length-1,last,0,last.length-1);
     }
