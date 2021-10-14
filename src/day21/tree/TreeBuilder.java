@@ -1,7 +1,9 @@
 package day21.tree;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * User: xuan
@@ -22,19 +24,19 @@ public class TreeBuilder {
      * @return 根结点
      */
     public TreeNode createTree(int[] array){
-        List<TreeNode> nodeList = new LinkedList<TreeNode>();
+        List<TreeNode> nodeList = new LinkedList<>();
         for (int j : array) nodeList.add(new TreeNode(j));
         for (int parentIndex = 0; parentIndex < array.length / 2 - 1; parentIndex++) {
             // 左孩子
             nodeList.get(parentIndex).left = nodeList.get(parentIndex * 2 + 1);
             nodeList.get(parentIndex).right = nodeList.get(parentIndex * 2 + 2);
         }
-        int lastparentIndex = array.length / 2 - 1;
-        nodeList.get(lastparentIndex).left = nodeList
-                .get(lastparentIndex * 2 + 1);
+        int lastParentIndex = array.length / 2 - 1;
+        nodeList.get(lastParentIndex).left = nodeList
+                .get(lastParentIndex * 2 + 1);
         if (array.length % 2 == 1)
-            nodeList.get(lastparentIndex).right = nodeList
-                    .get(lastparentIndex * 2 + 2);
+            nodeList.get(lastParentIndex).right = nodeList
+                    .get(lastParentIndex * 2 + 2);
         return nodeList.get(0)==null?null:nodeList.get(0);
     }
 
@@ -105,5 +107,36 @@ public class TreeBuilder {
         }
         return treeNode;
     }
+
+    /**
+     *
+     * @param array 输入数组，可以缺少节点
+     * @return 根结点
+     */
+    public TreeNode createTree(Integer[] array){
+
+        if(array==null||array.length==0){
+            return new TreeNode();
+        }
+        TreeNode root = new TreeNode();
+        TreeNode treeNode;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        root.val = array[0];
+        int i =1;
+        while (queue.size()>0){
+            treeNode = queue.poll();
+            treeNode.left = array[i]==null?null:new TreeNode(array[i]);
+            if(array[i]!=null) queue.add(treeNode.left);
+            i++;
+            if(i==array.length) return root;
+            treeNode.right = array[i]==null?null:new TreeNode(array[i]);
+            if(array[i]!=null) queue.add(treeNode.right);
+            i++;
+            if(i==array.length) return root;
+        }
+        return root;
+    }
+
 
 }

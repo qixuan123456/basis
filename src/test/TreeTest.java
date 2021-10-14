@@ -1,7 +1,7 @@
 package test;
 
-import day21.leetcode.TreeNode;
 
+import day21.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
