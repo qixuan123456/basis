@@ -4,29 +4,30 @@ import java.util.Arrays;
 
 public class No1838 {
     public static void main(String[] args) {
-        int[] nums = new int[100000];
+        int[] nums = new int[100001];
+        nums[100000] = 1;
         int k = 100000;
-        nums[nums.length-1]=1;
         System.out.println(maxFrequency(nums,k));
     }
     public static int maxFrequency(int[] nums, int k) {
         int max = 1;
         int left = 0;
         int right = 0;
-
+        int length = nums.length;
         Arrays.sort(nums);
-        int sum = nums[0];
-        while(left<nums.length&&right<nums.length){
-            if((sum+k)/(right-left+1)>=nums[right]){
-                max = Math.max(max,right-left+1);
+        long sum = nums[0];
+        while (left<=right&&right<length-1){
+            if((sum+k)/(right-left+1)>=nums[right+1]){
                 right++;
-                if(right==nums.length){
-                    max = Math.max(max,right-left);break;
-                }
-                sum += nums[right];
+                sum+=nums[right];
+                max = Math.max(max,right-left+1);
             }else {
-                sum -= nums[left];
+                sum-=nums[left];
                 left++;
+                if(right<left){
+                    sum = nums[left];
+                    right = left;
+                }
             }
         }
         return max;

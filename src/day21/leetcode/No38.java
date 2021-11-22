@@ -19,7 +19,7 @@ public class No38 {
         return s;
     }
     public static String countAnd(String s){
-        String ss="";
+        StringBuilder ss= new StringBuilder();
         char c=s.charAt(0);
         int num=0;
         for(int i=0;i<s.length();i++){
@@ -27,15 +27,15 @@ public class No38 {
                 num++;
             }
             else{
-                ss=ss+num+c;
+                ss.append(num).append(c);
                 c=s.charAt(i);
                 if(i==s.length()-1){
-                    return ss+1+c;
+                    return ss.toString() +1+c;
                 }
                 num=1;
             }
         }
-        ss=ss+num+c;
-        return ss;
+        ss.append(num).append(c);
+        return ss.toString();
     }
 }
