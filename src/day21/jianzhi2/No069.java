@@ -1,4 +1,4 @@
-package day21.jianzhi;
+package day21.jianzhi2;
 
 /**
  * User: xuan
