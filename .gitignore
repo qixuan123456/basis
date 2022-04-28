@@ -62,3 +62,4 @@ fastlane/readme.md
 app/xdagwallt.jks
 *.DS_store
 app/release
+target
