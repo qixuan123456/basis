@@ -6,6 +6,7 @@
         <option value="$USER_HOME$/Desktop/rpcserver/test1/pom.xml" />
         <option value="$USER_HOME$/Desktop/rpcserver/test2/pom.xml" />
         <option value="$PROJECT_DIR$/../../mavenModule/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
