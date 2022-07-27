@@ -14,7 +14,7 @@ public class Test1 extends Object{
         Class c1 = user.getClass();
         System.out.println(c1.hashCode());
 
-        Class c2 = Class.forName("main.java.reflection.Test1$ManUser");
+        Class c2 = Class.forName("com.qx.reflection.ReflectionTest.Test1$ManUser");
         System.out.println(c2.hashCode());
 
         Class c3 = ManUser.class;

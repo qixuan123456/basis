@@ -1,51 +1,60 @@
 package com.qx.day21.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class No146 {
     public static void main(String[] args) {
         LRUCache l = new LRUCache(2);
-        System.out.println(l.get(2));
-        l.put(2,6);
+
+        l.put(1,1);
+        l.put(2,2);
         System.out.println(l.get(1));
-        l.put(1,5);
-        l.put(1,2);
-        System.out.println(l.get(1));
+        l.put(3,3);
         System.out.println(l.get(2));
+        l.put(4,4);
+
+        System.out.println(l.get(1));
+        System.out.println(l.get(3));
+        System.out.println(l.get(4));
     }
 
 }
 class LRUCache {
-    private Map<Integer,Integer> map;
-    private List<Integer> list;
-    private int capacity;
+    private final Map<Integer,Integer> map;
+    private final Queue<Integer> queue;
+    private final int capacity;
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.map = new HashMap<>(capacity);
-        this.list = new ArrayList<>(capacity);
+        this.queue = new LinkedList<>();
     }
 
     public int get(int key) {
         if(map.containsKey(key)){
-            list.remove(new Integer(key));
-            list.add(key);
+            queue.remove(key);
+            queue.add(key);
             return map.get(key);
         }
         return -1;
     }
 
     public void put(int key, int value) {
-        if(list.size()==capacity){
-            if(!list.contains(key)){
-                map.remove(list.get(0));
-                list.remove(0);
+        if(queue.size()>=capacity){
+            if(map.containsKey(key)){
+                queue.remove(key);
+                queue.add(key);
+            }else {
+                map.remove(queue.poll());
+                queue.add(key);
+            }
+        }else {
+            if(map.containsKey(key)){
+                queue.remove(key);
+                queue.add(key);
+            }else {
+                queue.add(key);
             }
         }
-        list.remove(new Integer(key));
-        list.add(key);
         map.put(key,value);
     }
 }

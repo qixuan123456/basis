@@ -6,6 +6,9 @@ package com.qx.day19;
  * Time: 10:41
  */
 public class shell {
+    static {
+        System.out.println("sssss");
+    }
     public static void main(String[] args) {
         for (String s :
                 args) {

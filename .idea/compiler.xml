@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="test2" />
-        <module name="JiChu" />
+        <module name="leetcode" />
         <module name="mavenModule" />
         <module name="test1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="JiChu" target="8" />
+      <module name="leetcode" target="1.7" />
       <module name="mavenModule" target="1.8" />
       <module name="MavenProgram" target="1.5" />
       <module name="test1" target="1.5" />

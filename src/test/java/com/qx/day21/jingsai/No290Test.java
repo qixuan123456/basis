@@ -30,4 +30,10 @@ public class No290Test {
     public void no4(){
 
     }
+
+    @Test
+    public void countLatticePoints() {
+        int[][] ci = {{2,2,1}};
+        System.out.println(no290.countLatticePoints(ci));
+    }
 }

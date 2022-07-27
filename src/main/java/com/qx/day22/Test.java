@@ -13,5 +13,8 @@ public class Test {
         GaoStudent student1 = new GaoStudent("qwe",10);
         ((Student)student1).study();
         student1.eat();
+        System.out.println("------------------");
+        Student s = new GaoStudent("123",20);
+        s.study();
     }
 }

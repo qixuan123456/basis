@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JiChu.iml" filepath="$PROJECT_DIR$/JiChu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../mavenModule/mavenModule.iml" filepath="$PROJECT_DIR$/../../mavenModule/mavenModule.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/rpcserver/test1/test1.iml" filepath="$USER_HOME$/Desktop/rpcserver/test1/test1.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/rpcserver/test2/test2.iml" filepath="$USER_HOME$/Desktop/rpcserver/test2/test2.iml" />

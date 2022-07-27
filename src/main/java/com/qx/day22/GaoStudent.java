@@ -16,7 +16,7 @@ public class GaoStudent extends Student {
 
     @Override
     void study() {
-        System.out.println(name);
+        System.out.println(name+"在学校学习");
     }
 
     void eat(){

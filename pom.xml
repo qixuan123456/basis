@@ -18,7 +18,10 @@
             </plugin>
         </plugins>
     </build>
-    <packaging>jar</packaging>
+    <modules>
+        <module>leetcode</module>
+    </modules>
+    <packaging>pom</packaging>
     <name>health</name>
     <url>http://maven.apache.org</url>
     <properties>
