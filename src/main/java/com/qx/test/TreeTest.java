@@ -1,7 +1,7 @@
 package com.qx.test;
 
 
-import com.qx.day21.tree.TreeNode;
+import com.qx.shuati.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
